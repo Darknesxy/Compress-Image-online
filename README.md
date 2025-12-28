@@ -60,7 +60,7 @@ Fast. Simple. Secure.
 ## 🌐 Live Demo
 
 👉 **Try it live:**  
-🔗 https://YOUR_USERNAME.github.io/photo-compressor/
+🔗 https://darknesxy.github.io/Compress-Image-online/
 
 ---
 
