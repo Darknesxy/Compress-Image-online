@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>Image Compressor Pro | Ultra Fast • WebP/AVIF</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="particles"></canvas>
+  <div class="gradient-overlay"></div>
+
+  <!-- FAB -->
+  <button class="fab" id="uploadFab">📸</button>
+
+  <!-- Header -->
+  <header class="header glassmorphism">
+    <div class="logo">
+      <span class="logo-icon">🚀</span>
+      <h1>Image Compressor Pro</h1>
+    </div>
+    <div class="header-stats">
+      <span>50M+ Images Compressed</span>
+      <span>4.9⭐ (23K)</span>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero reveal">
+    <div class="hero-content">
+      <h2 class="gradient-text">Compress Images 10x Faster</h2>
+      <p>WebP • AVIF • 100% Private • No Server Upload</p>
+      <div class="hero-stats">
+        <div>⚡ <span>Instant</span></div>
+        <div>🔒 <span>Private</span></div>
+        <div>📱 <span>Mobile</span></div>
+      </div>
+    </div>
+
+    <div class="upload-zone glassmorphism" id="uploadZone">
+      <input
+        type="file"
+        id="fileInput"
+        multiple
+        accept="image/*"
+        class="file-input"
+      />
+      <div class="upload-icon">📁</div>
+      <p>
+        <strong>Drop Images Here</strong><br />
+        or Click to Browse
+      </p>
+    </div>
+  </section>
+
+  <!-- Compressor -->
+  <section class="compressor reveal">
+    <div class="images-grid" id="imagesContainer">
+      <!-- JS will inject .image-card -->
+    </div>
+
+    <div class="controls-panel glassmorphism">
+      <div class="control-group">
+        <label>
+          Quality
+          <span id="qualityValue" class="slider-value">80%</span>
+        </label>
+        <div class="slider-container">
+          <input
+            type="range"
+            id="qualitySlider"
+            min="20"
+            max="100"
+            value="80"
+          />
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label>Format</label>
+        <select id="formatSelect" class="select-custom">
+          <option value="image/jpeg">JPEG</option>
+          <option value="image/webp" selected>WebP</option>
+          <option value="image/avif">AVIF</option>
+        </select>
+      </div>
+
+      <div class="preset-buttons">
+        <button class="preset-btn active">🌐 Web</button>
+        <button class="preset-btn">📸 Insta</button>
+        <button class="preset-btn">💬 WA</button>
+      </div>
+
+      <button id="compressBtn" class="btn-primary gradient-btn">
+        <span>🚀 Compress All</span>
+      </button>
+    </div>
+    <div class="download-row">
+  <button id="downloadImagesBtn" class="btn-secondary" disabled>
+    Download Images
+  </button>
+  <button id="downloadZipBtn" class="btn-secondary" disabled>
+    Download Zip
+  </button>
+</div>
+  </section>
+
+  <!-- Stats -->
+  <div class="stats-bar glassmorphism" id="stats">
+    <div class="stat-item">
+      <span class="stat-label">Total Saved:</span>
+      <strong class="stat-value" id="totalSaved">0KB</strong>
+    </div>
+    <div class="stat-item">
+      <span>Compression:</span>
+      <strong id="compressionRate">0%</strong>
+    </div>
+  </div>
+
+  <!-- Rating -->
+  <section class="rating-section glassmorphism reveal">
+    <div class="rating-header">
+      <h3>⭐ How was your experience?</h3>
+      <div class="avg-rating">
+        <div class="stars-display" id="avgStars">⭐⭐⭐⭐⭐</div>
+        <span id="avgRating">4.9</span>/5
+        (<span id="totalRatings">23K</span>)
+      </div>
+    </div>
+
+    <div class="user-rating" id="userRatingSection">
+      <div class="star-rating" id="starRating">
+        <span class="star" data-rate="1">⭐</span>
+        <span class="star" data-rate="2">⭐</span>
+        <span class="star" data-rate="3">⭐</span>
+        <span class="star" data-rate="4">⭐</span>
+        <span class="star" data-rate="5">⭐</span>
+      </div>
+      <button id="submitRating" class="btn-secondary">Submit Rating</button>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section reveal">
+    <h2 class="section-title gradient-text">
+      ❓ Frequently Asked Questions
+    </h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>What is WebP format?</summary>
+        <p>
+          Google's modern image format with
+          <strong>up to 70% smaller files</strong> and similar
+          visual quality.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Is it safe for WhatsApp?</summary>
+        <p>
+          <strong>Yes.</strong> Everything happens inside your
+          browser, nothing is uploaded to any server.
+        </p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Will quality be reduced?</summary>
+        <p>
+          You control it with the quality slider.
+          <strong>80–90%</strong> is usually visually identical to
+          the original.
+        </p>
+      </details>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
